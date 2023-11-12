@@ -1,0 +1,33 @@
+{% extends "home.html" %}
+
+
+{% block letters %}
+
+<h4>Select the letter for the Company</h4>
+
+
+<form class="" action={{ url_for('letter') }} method='POST'>
+
+  <table class="table table-borderless">
+    <div class="form-group">
+      <tr>
+        <td width="19%""><label for="">Letters</label></td>
+        <td>
+          <select class="form-control" name="letter">
+            {% for letter in alphabet %}
+              <option value="{{ letter }}">
+                {{ letter }}
+              </option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+    </div>
+      <tr>
+        <td colspan="2" align="center"><input type="submit" class="btn btn-primary btn-sm" name="Submit" value="SELECT LETTER"></td>
+      </tr>
+  </table>
+
+</form>
+
+{% endblock letters %}

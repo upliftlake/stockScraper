@@ -1,0 +1,31 @@
+{% extends "home.html" %}
+
+  {% block about %}
+
+    <h2>
+      About
+    </h2>
+
+    <br>
+
+    <div class="container-fluid" style="font-size: 18px">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-2">
+          <img src="{{ url_for("static", filename="V1.jpg") }}" class="img-responsive img-thumbnail">
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8 col-lg-offset-0 col-md-offset-0 col-sm-offset-0 col-xs-offset-2">
+          <p>
+            This app is created with:
+          </p>
+          <ul>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>Bootstrap</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+  {% endblock about %}

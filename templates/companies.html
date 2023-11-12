@@ -1,0 +1,67 @@
+{% extends "home.html" %}
+
+
+{% block companies %}
+
+<form class="" action={{ url_for('graph') }} method="POST">
+    <table class="table table-borderless">
+    <div class="form-group">
+      <tr>
+        <td><label for="">Letters</label></td>
+        <td>
+          <select class="form-control" name="letter">
+            {% for letter in alphabet %}
+              <option value="{{ letter }}">
+                {{ letter }}
+              </option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+    </div>
+    <div class="form-group">
+      <tr>
+        <td><label for="">Companies</label></td>
+        <td>
+          <select class="form-control" name="companiesList">
+            {% for company in companiesList %}
+              <option value="{{ companiesList.index(company) }}">
+                {{ company }}
+              </option>
+            {% endfor %}
+          </select>
+        </td>
+      </tr>
+    </div>
+    <div class="form-group">
+      <tr>
+        <td><label for="">From</label></td>
+        <td>
+          <input class="form-control" type="date" name="from_date" value={{ fromDate }}>
+        </td>
+      </tr>
+    </div>
+    <div class="form-group">
+      <tr>
+        <td><label for="">To</label></td>
+        <td>
+          <input class="form-control" type="date" name="to_date" value={{ toDate }}>
+        </td>
+      </tr>
+    </div>
+    <div class="form-group">
+      <td><label for="">Graph Type</label></td>
+      <td>
+        <select class="form-control" name="types">
+          <option value="1">Candle-Lit</option>
+          <option value="2">Line</option>
+        </select>
+      </td>
+    </div>
+    <tr>
+      <td colspan="2" align="center"><input type="submit" class="btn btn-primary btn-sm" name="Submit" value="SEE THE GRAPH"></td>
+    </tr>
+    </table>
+</form>
+
+{% endblock companies %}
